@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="nice-dark-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Loading...</title>
+    <meta name='robots' content='noindex'>
+    <meta name='robots' content='noindex'>
+    <link rel='stylesheet' href='./static/css/jimu.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='./static/css/blocks.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='./static/css/bootstrap.min.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='./static/css/iconfont.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='./static/css/animate.min.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='./static/css/reset.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='./static/css/style.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='./static/css/jquery.fancybox.min.css'>
+    <script type="text/javascript" src='./static/js/jquery.min.js'></script>
+    <script type="text/javascript" src='./static/js/jquery-migrate.min.js'></script>
+    <script defer type="text/javascript" src='./static/js/alpine.min.js'></script>
+    <script type="text/javascript" src='./static/js/myPagination.js'></script>
+    <script type="text/javascript" src='./static/js/crypto-app.js'></script>
+    <script type="text/javascript" src='./static/js/imagesloaded.pkgd.min.js'></script>
+    <script type="text/javascript" src='./static/js/shuffle.min.js'></script>
+    <script type="text/javascript" src='./static/js/jquery.fancybox.min.js'></script>
+    <style>
+        body{
+        }
+        .menu-item{font-weight:600;}
+        .singleLine{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;white-space:normal;text-align:center;margin:10px auto;}
+        #loading{text-align:center;padding:50px;color:#fff;}
+        .post-topbar{border-bottom:1px solid rgba(128,128,128,0.2);padding-bottom:1rem;margin-bottom:1rem;}
+        .post-actions .btn-icon{padding:6px 10px;}
+        .post-title-wrap{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap;}
+        .page-btn{padding:6px 12px;border:1px solid rgba(0,0,0,0.25);background:#fff;color:#333;border-radius:60px;cursor:pointer;transition:all 0.2s;font-size:14px;min-width:36px;text-align:center;}
+        .page-btn:hover{background:#f0f0f0;transform:scale(1.08);}
+        .page-btn.active{background:#98A6AD;color:#fff;border-color:#98A6AD;cursor:default;}
+        .page-btn.active:hover{transform:none;}
+        .page-btn.disabled{opacity:0.4;cursor:not-allowed;pointer-events:none;}
+        .btn-icon.liked{background:#ff625e!important;border-color:#ff625e!important;}
+        .btn-icon.liked .iconfont{color:#fff!important;}
+        .post-actions .btn-icon{display:flex!important;align-items:center!important;justify-content:center!important;}
+        .page-jump-input{width:48px;text-align:center;padding:6px 8px;border:1px solid rgba(0,0,0,0.3);border-radius:60px;font-size:14px;outline:none;transition:border-color 0.2s;color:#333;}
+        .page-jump-input:focus{border-color:#98A6AD;}
+        html.nice-dark-mode .page-jump-input{color:#fff;background:#2a2a2a;border-color:rgba(255,255,255,0.2);}
+        .page-jump-btn{padding:6px 14px;border:1px solid rgba(0,0,0,0.25);background:#fff;color:#333;border-radius:60px;cursor:pointer;font-size:14px;transition:all 0.2s;}
+        .page-jump-btn:hover{background:#f0f0f0;transform:scale(1.08);}
+        #downloadBox{background:#f8f8f8;border:1px solid #e0e0e0;}
+        #downloadBoxTitle{font-weight:600;color:#333;}
+        .download-btn{padding:8px 20px;background:#ff625e;color:#fff;border:none;border-radius:60px;cursor:pointer;font-size:14px;transition:all 0.2s;display:inline-block;}
+        .download-btn:hover{opacity:0.85;transform:scale(1.02);}
+        .download-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+        #downloadMsg{margin:0 0 16px;font-size:15px;color:#333;line-height:1.6;}
+        .download-close-btn{margin-left:8px;padding:10px 28px;background:#fff;color:#999;border:1px solid #ddd;border-radius:60px;cursor:pointer;font-size:14px;transition:all 0.2s;display:inline-block;}
+        .download-close-btn:hover{background:#f0f0f0;}
+        /* Dark mode defaults */
+        html.nice-dark-mode body,body.nice-dark-mode{background-color:var(--dark-bg-body,#1a1a1a)!important;}
+        html.nice-dark-mode .light.iconfont{display:none!important;}
+        html.nice-dark-mode .dark.iconfont{display:flex!important;}
+        html.nice-dark-mode #downloadBox{background:rgb(24,24,24);border-color:rgba(255,255,255,0.1);}
+        html.nice-dark-mode #downloadBoxTitle{color:#fff;}
+        html.nice-dark-mode #downloadMsg{color:#e0e0e0;}
+        html.nice-dark-mode #downloadPwd{color:#ff5c5c;}
+        html.nice-dark-mode .download-close-btn{background:#444;color:#fff;border-color:rgba(255,255,255,0.15);}
+        html.nice-dark-mode .download-close-btn:hover{background:#555;}
+        html.nice-dark-mode #DownloadModal .search-popup-content{background:#333;border-radius:12px;}
+        html.nice-dark-mode #DownloadModal .search-popup-inner{background:#333;border-radius:12px;z-index:9999;}
+        .search-popup-inner{z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+        #DownloadModal.search-popup{display:flex;align-items:center;justify-content:center;}
+        #DownloadModal.search-popup .search-popup-inner{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);margin:0;}
+        .download-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:rgba(0,0,0,0.6);opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.3s ease-in-out,visibility 0.3s ease-in-out;z-index:9998;}
+        #DownloadModal.active .download-overlay{opacity:1;visibility:visible;}
+        .grid-sizer{display:none;}
+        /* Fancybox background */
+        .fancybox-bg{background:rgba(0,0,0,0.95) !important;}
+        /* Image progressive load animation (only for renderPage items) */
+        #masonry-list .masonry-image{opacity:0;transition:opacity .4s ease;}
+        #masonry-list .masonry-item{transition:opacity .4s ease,transform .4s ease;}
+        #masonry-list .masonry-item.item-enter{opacity:0;transform:translateY(12px);}
+    </style>
+</head>
+<body class="home blog nice-dark-mode">
+    <script>if(document.cookie.indexOf('dark=false')!==-1){document.documentElement.classList.remove('nice-dark-mode');document.body.classList.remove('nice-dark-mode');}else{document.documentElement.classList.add('nice-dark-mode');document.body.classList.add('nice-dark-mode');}</script>
+    <div class="default-layout">
+        <aside class="site-aside">
+            <a href="./" class="aside-brand" rel="home">
+                <img src="./static/picture/logo.png" class="logo logo-light nc-no-lazy active" alt="OVOVO">
+                <img src="./static/picture/logo2.png" class="logo logo-dark nc-no-lazy" alt="OVOVO">
+            </a>
+            <div class="aside-body">
+                <ul class="aside-menu">
+                    <li class="menu-item"><a href="./">Home</a></li>
+                    <li class="menu-item"><a href="./models.html">Models</a></li>
+                    <li class="menu-item"><a href="./collection.html">My Favorites</a></li>
+                    <li class="menu-item"><a href="https://ovovo.me">Permanent Page</a></li>
+                </ul>
+            </div>
+            <div class="aside-trigger aside-toggle"></div>
+        </aside>
+        <div class="site-wrapper">
+            <header class="site-header navbar navbar-expand-xl">
+                <div class="container">
+                    <h1 class="navbar-brand">
+                        <a href="./" rel="home">
+                            <img src="./static/picture/logo.png" class="logo logo-light nc-no-lazy active" alt="OVOVO">
+                            <img src="./static/picture/logo2.png" class="logo logo-dark nc-no-lazy" alt="OVOVO">
+                        </a>
+                    </h1>
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-site navbar-nav ms-xl-5">
+                            <li class="menu-item"><a href="./">Home</a></li>
+                            <li class="menu-item"><a href="./models.html">Models</a></li>
+                            <li class="menu-item"><a href="./collection.html">My Favorites</a></li>
+                            <li class="menu-item"><a href="https://ovovo.me">Permanent Page</a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar-actions d-flex flex-fill align-items-center justify-content-end">
+                        <a href="javascript:" class="dark-toggle btn btn-link btn-sm btn-icon ms-2 ms-md-3 active">
+                            <span><i class="light iconfont icon-yewanmoshi_dark-mode"></i><i class="dark iconfont icon-yewanmoshi_dark-mode"></i></span>
+                        </a>
+                        <a href="javascript:" onclick="document.getElementById('SearchModal').classList.add('active','focused');document.getElementById('SearchInput').focus()" class="search-toggle btn btn-link btn-sm btn-icon ms-2 ms-md-3">
+                            <span><i class="iconfont icon-sousuo_search"></i></span>
+                        </a>
+                        <a href="javascript:" class="aside-toggle aside-icon btn btn-link btn-sm btn-icon ms-2 ms-md-3">
+                            <span><b><i></i><i></i></b></span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <main class="site-main" style="transform:none;">
+                <div class="container" style="transform:none;">
+                    <div id="loading">
+                        <div style="text-align:center;width:100%;padding:60px 0;">
+                            <div style="font-size:18px;color:#aaa;">Loading...</div>
+                        </div>
+                    </div>
+                    <div id="main-content" style="display:none;">
+                        <div class="row gx-3 gx-md-4" style="transform:none;">
+                            <!-- Main content area -->
+                            <div class="col-12 col-xl-9 col-xxxl-9">
+                                <div class="post card card-md">
+                                    <div class="card-body">
+                                        <div class="post-topbar d-flex align-items-center justify-content-between flex-row mx-md-1 mb-4">
+                                            <a href="#" id="authorGroup" class="author-group d-flex align-items-center text-decoration-none">
+                                                <div class="author-avatar flex-avatar me-2 me-md-3">
+                                                    <img id="authorAvatar" src="./1.webp" alt="" referrerpolicy="no-referrer">
+                                                </div>
+                                                <div class="d-flex flex-fill flex-column lh-sm">
+                                                    <div><div class="h-1x" id="authorName">OVOVO</div></div>
+                                                    <div><span class="text-xs text-secondary">Remember Us!</span></div>
+                                                </div>
+                                            </a>
+                                            <div class="post-actions d-flex flex-wrap flex-row flex-shrink-0 font-number">
+                                                <button id="likeBtn" class="d-none d-md-block btn btn-light btn-icon ms-2" onclick="ShowHandleLike()">
+                                                    <span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;"><i id="likeIconEmpty" class="iconfont icon-xihuan_like" style="display:flex;align-items:center;"></i><i id="likeIconFilled" class="iconfont icon-xihuan_like1" style="display:none;"></i></span>
+                                                </button>
+                                                <button class="d-none d-md-block btn btn-light btn-icon ms-2" disabled style="display:flex;align-items:center;justify-content:center;gap:6px;">
+                                                    <i class="iconfont icon-yulan-dakai_preview-open" style="display:flex;align-items:center;"></i>
+                                                    <small id="hot-count">0</small>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <h1 class="text-xxl text-dark mb-3" id="article-title">
+                                            Loading<span class="font-number text-danger text-md ms-2" id="img-count"></span>
+                                        </h1>
+                                        <div class="post-content mb-3"></div>
+
+                                        <!-- Download box -->
+                                        <div id="downloadBox" style="display:none;padding:16px 20px;border:1px solid #e0e0e0;border-radius:12px;margin-bottom:16px;">
+                                            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+                                                <div>
+                                                    <span id="downloadBoxTitle">Get Ed2k link to download</span>
+                                                    <div id="downloadPwd" style="font-size:12px;color:#ff5c5c;margin-top:4px;">Unzip password: https://ovovo.me</div>
+                                                </div>
+                                                <button id="getLinkBtn" onclick="ShowFetchDownloadLink()" class="download-btn">Get link</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Image grid -->
+                                        <!-- Pagination buttons (top) -->
+                                        <div id="pagination-top" style="padding:12px 0;display:flex;justify-content:center;align-items:center;gap:6px;flex-wrap:wrap;">
+                                            <button id="prevBtnTop" class="page-btn" onclick="ShowGoPrevPage()">Prev</button>
+                                            <div id="pagination-top-pages" style="display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center;"></div>
+                                            <button id="nextBtnTop" class="page-btn" onclick="ShowGoNextPage()">Next</button>
+                                            <div style="display:inline-flex;align-items:center;gap:4px;margin-left:4px;">
+                                                <input type="number" id="pageJumpInputTop" class="page-jump-input" min="1" placeholder="1" onfocus="lastJumpInput='top'" onkeydown="if(event.key==='Enter')ShowDoJumpPage()">
+                                                <button class="page-jump-btn" onclick="ShowDoJumpPage()">Go</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Image grid -->
+                                        <div id="masonry-list" class="masonry-list row gx-2 gx-md-3 gx-xl-4" style="position:relative;">
+                                            <div class="grid-sizer"></div>
+                                        </div>
+
+                                        <!-- Pagination buttons (bottom) -->
+                                        <div id="pagination" style="padding-top:16px;display:flex;justify-content:center;align-items:center;gap:6px;flex-wrap:wrap;">
+                                            <button id="prevBtn" class="page-btn" onclick="ShowGoPrevPage()">Prev</button>
+                                            <div id="pagination-pages" style="display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center;"></div>
+                                            <button id="nextBtn" class="page-btn" onclick="ShowGoNextPage()">Next</button>
+                                            <div style="display:inline-flex;align-items:center;gap:4px;margin-left:4px;">
+                                                <input type="number" id="pageJumpInput" class="page-jump-input" min="1" placeholder="1" onfocus="lastJumpInput='bottom'" onkeydown="if(event.key==='Enter')ShowDoJumpPage()">
+                                                <button class="page-jump-btn" onclick="ShowDoJumpPage()">Go</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- Related -->
+                                <div class="related-post-grid card card-md mt-3 mt-md-4">
+                                    <h2 class="card-header text-xl icon-mt-md">
+                                        <i class="text-xl text-primary iconfont icon-duigou_check-correct me-1"></i>More
+                                    </h2>
+                                    <div class="card-body">
+                                        <div class="column-list row g-2 g-md-3 g-xl-4" id="related-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sidebar -->
+                            <div class="site-sidebar col-12 col-xl-3 col-xxxl-3 d-none d-xl-block">
+                                <div class="widget widget_recommended_posts block mb-4">
+                                    <h2 class="widget-header text-lg">Hot</h2>
+                                    <div class="list-grid" id="hot-list"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="text-muted text-sm text-center py-4 py-md-5">
+                <div class="container">All resources are shared by their respective owners.</div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="scroll-toolbar d-none d-md-block">
+        <div class="scroll-backtotop mt-3">
+            <a href="javascript:" class="totop-button btn btn-light btn-icon btn-rounded">
+                <span><i class='iconfont icon-qudingbu_to-top'></i></span>
+            </a>
+        </div>
+    </div>
+
+    <div id="SearchModal" class="search-popup">
+        <div class="search-popup-overlay" onclick="hideSearchModal()"></div>
+        <div class="search-popup-inner">
+            <div class="search-popup-content p-2">
+                <form role="search" class="search-popup-form" method="get" action="./">
+                    <input id="SearchInput" class="search-popup-input form-control form-control-lg" type="text" placeholder="Search something……" name="s">
+                </form>
+            </div>
+            <button class="search-popup-close btn btn-link btn-icon btn-rounded" onclick="hideSearchModal()">
+                <span><i class='iconfont icon-guanbi_close1'></i></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="DownloadModal" class="search-popup">
+        <div class="download-overlay"></div>
+        <div class="search-popup-inner">
+            <div class="search-popup-content p-3" style="text-align:center;">
+                <p id="downloadMsg"></p>
+                <button id="downloadActionBtn" onclick="handleDownloadAction()" class="download-btn" style="display:none;"></button>
+                <button onclick="hideDownloadPopup()" class="download-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overflow"></div>
+    <script type="text/javascript" src='./static/js/jimu.js'></script>
+    <script type="text/javascript" src='./static/js/nicetheme.js'></script>
+    <script type="text/javascript" src='./static/js/swiper-bundle.min.js'></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="nice-dark-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Loading...</title>
+    <meta name='robots' content='noindex'>
+    <link rel='stylesheet' href='static/css/myPagination.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='static/css/jimu.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='static/css/blocks.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='static/css/bootstrap.min.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='static/css/iconfont.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='static/css/animate.min.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='static/css/reset.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='static/css/style.css' type='text/css' media='all'>
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-migrate.min.js"></script>
+    <script defer type="text/javascript" src="static/js/alpine.min.js"></script>
+    <script type="text/javascript" src="static/js/myPagination.js"></script>
+    <script type="text/javascript" src="static/js/crypto-app.js"></script>
+    <script type="text/javascript" src="static/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="static/js/shuffle.min.js"></script>
+    <script type="text/javascript" src="static/js/lazyload.min.js"></script>
+    <script type="text/javascript" src="static/js/jimu.js"></script>
+    <script type="text/javascript" src="static/js/nicetheme.js"></script>
+    <style>
+        body{}
+        .menu-item{font-weight:600;}
+        .singleLine{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;white-space:normal;text-align:center;margin:10px auto;}
+        .masonry-image{transition:transform .3s ease,opacity .3s ease;}
+        .masonry-item:hover .masonry-image{transform:scale(1.03);}
+        #loading{text-align:center;padding:50px;color:#fff;}
+        html.nice-dark-mode body,body.nice-dark-mode{background-color:var(--dark-bg-body,#1a1a1a)!important;}
+        html.nice-dark-mode .light.iconfont{display:none!important;}
+        html.nice-dark-mode .dark.iconfont{display:flex!important;}
+        .model-hero{
+            display:flex;align-items:center;gap:20px;
+            padding:20px 0 28px;
+            border-bottom:1px solid rgba(128,128,128,0.2);
+            margin-bottom:24px;
+        }
+        .model-avatar{width:72px;height:72px;border-radius:50%;overflow:hidden;flex-shrink:0;background:#000;}
+        .model-avatar img{width:100%;height:100%;object-fit:cover;}
+        .model-name{font-size:20px;font-weight:700;color:#333;margin:0 0 6px;}
+        .model-meta{font-size:13px;color:#999;}
+        html.nice-dark-mode .model-name{color:#fff;}
+        html.nice-dark-mode .model-meta{color:#888;}
+    </style>
+</head>
+<body class="home blog nice-dark-mode">
+    <script>if(document.cookie.indexOf('dark=false')!==-1){document.documentElement.classList.remove('nice-dark-mode');document.body.classList.remove('nice-dark-mode');}else{document.documentElement.classList.add('nice-dark-mode');document.body.classList.add('nice-dark-mode');}</script>
+    <div class="default-layout">
+        <aside class="site-aside">
+            <a href="./" class="aside-brand" rel="home">
+                <img src="static/picture/logo.png" class="logo logo-light nc-no-lazy active" alt="OVOVO">
+                <img src="static/picture/logo2.png" class="logo logo-dark nc-no-lazy" alt="OVOVO">
+            </a>
+            <div class="aside-body">
+                <ul class="aside-menu">
+                    <li class="menu-item"><a href="./">Home</a></li>
+                    <li class="menu-item"><a href="./models.html">Models</a></li>
+                    <li class="menu-item"><a href="./collection.html">My Favorites</a></li>
+                    <li class="menu-item"><a href="https://ovovo.me">Permanent Page</a></li>
+                </ul>
+            </div>
+            <div class="aside-trigger aside-toggle"></div>
+        </aside>
+        <div class="site-wrapper">
+            <header class="site-header navbar navbar-expand-xl">
+                <div class="container">
+                    <h1 class="navbar-brand">
+                        <a href="./" rel="home">
+                            <img src="static/picture/logo.png" class="logo logo-light nc-no-lazy active" alt="OVOVO">
+                            <img src="static/picture/logo2.png" class="logo logo-dark nc-no-lazy" alt="OVOVO">
+                        </a>
+                    </h1>
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-site navbar-nav ms-xl-5">
+                            <li class="menu-item"><a href="./">Home</a></li>
+                            <li class="menu-item"><a href="./models.html">Models</a></li>
+                            <li class="menu-item"><a href="./collection.html">My Favorites</a></li>
+                            <li class="menu-item"><a href="https://ovovo.me">Permanent Page</a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar-actions d-flex flex-fill align-items-center justify-content-end">
+                        <a href="javascript:" class="dark-toggle btn btn-link btn-sm btn-icon ms-2 ms-md-3 active">
+                            <span>
+                                <i class="light iconfont icon-yewanmoshi_dark-mode"></i>
+                                <i class="dark iconfont icon-yewanmoshi_dark-mode"></i>
+                            </span>
+                        </a>
+                        <a href="javascript:" class="aside-toggle aside-icon btn btn-link btn-sm btn-icon ms-2 ms-md-3">
+                            <span><b><i></i><i></i></b></span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <main class="site-main">
+                <div class="container">
+                    <div id="loading" style="text-align:center;padding:60px 0;color:#aaa;">Loading...</div>
+                    <div id="main-content" style="display:none;">
+                        <!-- Model hero -->
+                        <div class="model-hero" id="modelHero">
+                            <div class="model-avatar">
+                                <img id="modelAvatar" src="1.webp" alt="" referrerpolicy="no-referrer">
+                            </div>
+                            <div>
+                                <div class="model-name" id="modelName">Loading...</div>
+                                <div class="model-meta" id="modelMeta"></div>
+                            </div>
+                        </div>
+
+                        <!-- Grid -->
+                        <div id="masonry-list" class="masonry-list row gx-2 gx-md-3 gx-xl-4">
+                            <div class="col-6 col-md-4 col-xl-3 col-xxxl-20 grid-sizer"></div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div id="pagination" class="pagination" style="width:100%;text-align:center;padding:20px;display:none;"></div>
+                    </div>
+                    <div id="emptyTip" style="text-align:center;padding:80px 0;color:#aaa;font-size:16px;display:none;">
+                        <div>No Sets Found</div>
+                    </div>
+                </div>
+            </main>
+            <footer class="text-muted text-sm text-center py-4 py-md-5">
+                <div class="container">
+                    All resources are shared by their respective owners.
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="scroll-toolbar d-none d-md-block">
+        <div class="scroll-backtotop mt-3">
+            <a href="javascript:" class="totop-button btn btn-light btn-icon btn-rounded">
+                <span><i class='iconfont icon-qudingbu_to-top'></i></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="mobile-overflow"></div>
+
+</body>
+</html>
